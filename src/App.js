@@ -19,8 +19,19 @@ const App = () => {
     setIsLoading(false)
   }
 
+  const getData2 = () => {
+    const laptops = [
+      { brand: "Apple", name: "MacBook Air", weigth: 0.5 },
+      { brand: "Asus", name: "P30", weigth: 1.7 },
+      { brand: "Lenovo", name: "A50", weigth: 1.5 },
+    ]
+    setLaptops(laptops)
+    setData(laptops)
+    setIsLoading(false)
+  }
+
   useEffect(() => { 
-    getData()
+    getData2()
   }, [])
 
   const handleChange = (e) => {
@@ -29,8 +40,8 @@ const App = () => {
   }
 
   const handleClick = () => {
-    const sorted = data.sort((a, b) => descending ? a.weigth < b.weigth : a.weigth > b.weigth)
-    setData([...sorted])
+    data.sort((a, b) => descending ? a.weigth < b.weigth : a.weigth > b.weigth)
+    setData([...data])
     setDescending(!descending)
   }
 
