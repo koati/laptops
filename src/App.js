@@ -40,7 +40,8 @@ const App = () => {
   }
 
   const handleClick = () => {
-    data.sort((a, b) => descending ? a.weigth < b.weigth : a.weigth > b.weigth)
+    data.sort((a, b) => descending ? a.weigth - b.weigth : b.weigth - a.weigth)
+    console.log(data);
     setData([...data])
     setDescending(!descending)
   }
